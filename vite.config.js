@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import * as path from 'path';
-import pluginPurgeCss from '@mojojoejo/vite-plugin-purgecss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,12 +8,7 @@ export default defineConfig({
 	server: {
 		open: 'index.html',
 	},
-	plugins: [
-		react(),
-		pluginPurgeCss({
-			variables: true,
-		}),
-	],
+	plugins: [react()],
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
